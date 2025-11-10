@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<package format="2">
+  <name>tortoisebot_msgs</name>
+  <version>0.0.1</version>
+  <description>Action and message definitions for Tortoisebot</description>
+
+  <maintainer email="user@todo.todo">user</maintainer>
+  <license>BSD</license>
+
+  <buildtool_depend>catkin</buildtool_depend>
+
+  <depend>std_msgs</depend>
+  <depend>geometry_msgs</depend>
+  <depend>actionlib_msgs</depend>
+
+  <build_depend>message_generation</build_depend>
+  <exec_depend>message_runtime</exec_depend>
+
+  <export/>
+</package>
