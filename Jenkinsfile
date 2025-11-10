@@ -28,7 +28,6 @@ pipeline {
             steps {
                 echo "Running Docker container..."
                 sh '''
-                xhost +local:root
                 docker run --name ${CONTAINER_NAME} --rm \
                     -e DISPLAY=${DISPLAY} \
                     -e QT_X11_NO_MITSHM=${QT_X11_NO_MITSHM} \
@@ -51,7 +50,6 @@ pipeline {
                         kill $GAZEBO_PID || true
                         wait $GAZEBO_PID || true
                     "
-                xhost -local:root
                 '''
             }
         }
@@ -65,7 +63,6 @@ pipeline {
             echo "Build or test failed. Check the Console Output above for details."
         }
         always {
-            // Ensure the container is stopped even on failure
             sh '''
             docker stop ${CONTAINER_NAME} || true
             docker rm ${CONTAINER_NAME} || true
