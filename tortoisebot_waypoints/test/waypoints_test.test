@@ -1,0 +1,6 @@
+<launch>
+  <node pkg="tortoisebot_waypoints" type="tortoisebot_action_server.py" name="tortoisebot_action_server" output="screen" />
+
+  <test test-name="end_position_test" pkg="tortoisebot_waypoints" type="end_position_test.py" time-limit="60" />
+  <test test-name="end_rotation_test" pkg="tortoisebot_waypoints" type="end_rotation_test.py" time-limit="60" />
+</launch>
