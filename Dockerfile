@@ -16,8 +16,6 @@ RUN set -x \
     && apt-get install -y ros-noetic-turtlebot3-example ros-noetic-turtlebot3-gazebo \
     && apt-get install -y ros-noetic-turtlebot3-msgs ros-noetic-turtlebot3-navigation \
     && apt-get install -y ros-noetic-turtlebot3-simulations \
-    && apt-get install -y ros-noetic-turtlebot3-slam ros-noetic-turtlebot3-teleop \
-    && apt-get install -y ros-noetic-gmapping ros-noetic-slam-gmapping ros-noetic-openslam-gmapping \ 
     && rm -rf /var/lib/apt/lists/*
 
 # Link python3 to python otherwise ROS scripts fail when using the OSRF contianer
