@@ -32,7 +32,10 @@ else
     # Run Jenkins with a prefix. A prefix is needed because we are using a 
     # reverse proxy to run it on the Academy. This may not be necessary in your setup.
     # Store Jenkins proceess ID in JENKINS_PID
-    java -jar jenkins.war --prefix="/$SLOT_PREFIX/jenkins/" &
+    java -Dhudson.ClassicPluginStrategy.useAntClassLoader=true \
+        -Djenkins.model.Jenkins.disableSetupWizard=true \
+        -DJENKINS_HOME=$JENKINS_HOME \
+        -jar jenkins.war --prefix="/$SLOT_PREFIX/jenkins/" &
     JENKINS_PID=$!
     sleep 15s
 
