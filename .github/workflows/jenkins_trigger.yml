@@ -1,0 +1,12 @@
+name: Trigger Jenkins Build
+on:
+  push:
+    branches: [ master ]
+
+jobs:
+  trigger:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Call Jenkins build
+        run: |
+          curl -X POST "https://i-00473075dd81d7195.robotigniteacademy.com/bae91697-d7e4-4493-942b-bb6813f4a713/jenkins/job/ros1_ci/build?token=ROS1_CI_TOKEN"
