@@ -37,8 +37,7 @@ pipeline {
                     source /opt/ros/noetic/setup.bash &&
                     source /catkin_ws/devel/setup.bash &&
                     echo 'Starting Gazebo simulation...' &&
-                    roslaunch tortoisebot_gazebo tortoisebot_playground.launch &
-                    GZ_PID=$!
+                    roslaunch tortoisebot_gazebo tortoisebot_playground.launch
 
                     echo 'Waiting for /odom topic (Gazebo startup)...'
                     timeout 90 bash -c 'until rostopic list | grep -q /odom; do sleep 2; echo Waiting...; done'
